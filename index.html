@@ -5,15 +5,20 @@
   <title>Alligators To Know</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
 
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
   <script src="script.js"></script>
 </head>
-<body>
-  <header>
-    <h1>
-      <img src="alligator-logo.png" alt="Alligator Logo">
-      My Favorite Alligators
-    </h1>
+<body >
+  <header id="headerApp">
+    <headline title="My Favorite Alligators"></headline>
   </header>
+
+
+  <!-- <div id="app">
+    {{ message }}
+  </div> -->
+
 
   <div class="filters">
     <label>
@@ -22,11 +27,13 @@
     </label>
   </div>
 
-  <section class="profile-container">
-    <div class="profile">
-      <h3>Wanda Snapson</h3>
-      <img src="http://www.vaguebuttrue.com/images/1449775760-alligatorclimbsfenceWEBSITE.jpg" alt="Wanda Snapson">
-      <p>Hobbies include having parties.</p>
+
+  <section class="profile-container"  id="profileListings">
+    <div class="profile" v-for="profile in profiles">
+      <h3>{{profile.name}}</h3>
+      <!-- <h3>Wanda Snapson</h3> -->
+      <img v-bind:src="profile.imgSource" v-bind:alt="profile.name">
+      <p>Hobbies include {{profile.hobbies}}</p>
     </div>
 
     <div class="profile">

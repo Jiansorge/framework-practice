@@ -16,3 +16,45 @@ var gators = [
     imgSource: "http://www.vaguebuttrue.com/images/1449775760-alligatorclimbsfenceWEBSITE.jpg"
   }
 ]
+
+Vue.component('headline', {
+  props: ['title'],
+  template: '<h1><img src="alligator-logo.png" alt="Alligator Logo">{{title}}</h1>'
+})
+
+
+
+document.addEventListener("DOMContentLoaded", function(){
+
+  let profileListings = new Vue({
+    el: '#profileListings',
+    data: {
+      profiles: gators
+    }
+  })
+
+  let headerApp = new Vue({
+    el:'#headerApp'
+    // data: {
+    //   <h1><img src="alligator-logo.png" alt="Alligator Logo">
+    //     My Favorite Alligators
+    //   </h1>
+
+  })
+
+
+})
+
+
+
+
+
+// var app
+// document.addEventListener("DOMContentLoaded", function(){
+//   app = new Vue({
+//     el: '#app',
+//     data: {
+//       message: 'Hello World!'
+//     }
+//   })
+// })
